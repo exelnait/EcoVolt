@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+Hello
+<button id="buttonStatus">Get Status</button>
+<button id="buttonSet">Set Status</button>
+<script src="https://cdn.socket.io/socket.io-1.3.5.js"></script><script>
+    var socket = io('http://178.62.66.132:3000');
+    socket.on('connect', function(){
+        console.log('Connected')
+    });
+    document.getElementById('buttonStatus').onclick = function () {
+        socket.emit('status');
+    };
+    document.getElementById('buttonSet').onclick = function () {
+        socket.emit('enable', true);
+    };
+    socket.on('status', function(status){
+        console.log(status)
+    });
+    socket.on('enable', function(enable){
+        console.log(enable)
+    });
+    socket.on('disconnect', function(){
+        console.log('Disconnected')
+    });
+</script>
+</body>
+</html>

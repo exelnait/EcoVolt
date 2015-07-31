@@ -1,0 +1,24 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title">Регистрация</h1>
+    </ion-header-bar>
+    <ion-content>
+        <div class="list">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Имя</span>
+                <input type="text" placeholder="John" ng-model="registerObj.name">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">E-Mail</span>
+                <input type="email" placeholder="Suhr" ng-model="registerObj.email">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Пароль</span>
+                <input type="password" placeholder="******" ng-model="registerObj.password">
+            </label>
+        </div>
+        <div class="padding">
+            <button class="button button-block button-outline button-balanced" ng-click="register()">Регистрация</button>
+        </div>
+    </ion-content>
+</ion-modal-view>

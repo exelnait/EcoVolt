@@ -1,0 +1,39 @@
+<ion-modal-view>
+    <ion-header-bar class="bar-balanced">
+        <h1 class="title">Добавление прибора</h1>
+        <button class="button button-icon icon ion-android-close" ng-click="closeAddDevice()"></button>
+    </ion-header-bar>
+    <ion-content>
+        <div class="list">
+            <label class="item item-input">
+                <input type="text" placeholder="Название прибора" ng-model="device.title">
+            </label>
+            <div class="item item-divider">
+                Изображение прибора
+            </div>
+            <label class="item item-radio" ng-repeat="item in allItems">
+                <input type="radio" name="group" ng-model="device.icon" ng-value="item.icon">
+                <div class="item item-avatar">
+                    <img ng-src="{{ item.icon }}">
+                </div>
+                <i class="radio-icon ion-checkmark"></i>
+            </label>
+            <br>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Максимальное время работы
+                </div>
+                <select>
+                    <option>1 час</option>
+                    <option selected>2 часа</option>
+                    <option>4 часа</option>
+                    <option>6 часов</option>
+                    <option>8 часов</option>
+                </select>
+            </label>
+        </div>
+        <div class="padding">
+            <button class="button button-block button-balanced"ng-click="addDevice(device)">Добавить</button>
+        </div>
+    </ion-content>
+</ion-modal-view>
