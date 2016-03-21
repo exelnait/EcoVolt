@@ -21,14 +21,7 @@ app.all('/*', function(req, res, next) {
 app.get('/', function(req, res){
 	res.sendfile('index.html');
 });
-app.get('/register', function(req, res){
-	var token = jwt.sign({ foo: 'bar' }, 'shhhhh');
-	res.send(token);
-});
-app.get('/login', function(req, res){
-	var token = jwt.sign({ foo: 'bar' }, 'shhhhh');
-	res.send(token);
-});
+
 var devices = {}, users = {};
 io.on('connection', function(socket){
 	var user = {
@@ -82,6 +75,6 @@ io.on('connection', function(socket){
 	}
 });
 
-http.listen(3000, function(){
-	console.log('listening on *:3000');
+http.listen(8085, function(){
+	console.log('listening on *:8085');
 });

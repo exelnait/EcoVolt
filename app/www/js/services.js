@@ -21,7 +21,7 @@ angular.module('starter.services', [])
     }
 })
 .service('Socket', function ($q,$rootScope) {
-    var socket = io('http://178.62.66.132:3000', {
+    var socket = io('http://104.41.226.120:8085', {
       query: {
         type: 'app',
         id: 123
